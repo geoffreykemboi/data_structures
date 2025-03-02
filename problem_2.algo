@@ -1,0 +1,39 @@
+PROCEDURE dot_product(V1, V2, VAR ps)
+
+VAR
+  i : INTERGER;
+
+BEGIN
+  ps :=0;
+  FOR i FROM 0 TO LENGTH (V1) - 1 DO
+      ps : = ps + (V1[i] * V2[i]);
+  END_FOR
+
+
+END_PROCEDURE
+
+ALGORITHM check_orthogonality
+VAR
+  V1, V2 :ARRAY OF INTEGER;
+  ps, i, n : INTEGER:
+
+BEGIN
+      READ(n);
+
+      FOR i FROM 0 TO n - 1 DO
+        READ(V1, V2);
+
+        dot_product(v1, v2, ps);
+
+
+        IF ps = 0  THEN
+
+            WRITE ("vectors are orthogonal");
+
+        ELSE
+           WRITE ("vectors are not orthogonal");
+
+         
+        END_IF
+      END_FOR
+END_ALGORITHM
